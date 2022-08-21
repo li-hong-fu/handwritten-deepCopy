@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="./index.js"></script>
+    <script>
+        // 多种数据类型及出现循环引用时实现深拷贝
+        let obj = {
+            name: '小明',
+            age: 18,
+            arr: [1, 2, 3],
+            obj2: {
+                a: 1
+            },
+            fn: function () {
+                console.log(123213);
+            },
+            date: new Date(),
+        };
+
+        obj.obj = obj // 循环引用
+
+        let newObj = deepClone(obj)
+        newObj.arr.push(678)
+        newObj.obj2.a = '需要比别人花更多努力学习'
+
+        console.log(obj, newObj);
+    </script>
+    </script>
+</body>
+
+</html>
